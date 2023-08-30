@@ -22,52 +22,28 @@
   <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
   [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-## Description
+# NestJS Serverless Boilerplate with DynamoDB
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Welcome to the NestJS Serverless Boilerplate with DynamoDB NPM package! This package provides a convenient way to set up a new NestJS project configured for serverless deployment, with DynamoDB integration included.
+
+## Features
+
+- Pre-configured NestJS application for serverless deployment.
+- Integration with AWS DynamoDB for database storage.
+- Boilerplate code and directory structure for rapid development.
+- Simplified setup for both local development and deployment.
+
+## Prerequisites
+
+Before you begin, make sure you have the following installed:
+
+- Node.js and npm: Make sure you have Node.js (>=12.0.0) and npm installed on your system.
 
 ## Installation
 
-```bash
-$ npm install
-```
+To get started, you can install this package globally or locally using npm:
 
-## Running the app
+```sh
+npx nest-serverless <your-project-name>
 
-```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
-```
-
-## Test
-
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
-```
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
+Thanks for downloading ! 
