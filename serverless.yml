@@ -1,0 +1,57 @@
+service: nest-serverless
+plugins:
+  - serverless-plugin-optimize
+  - serverless-offline
+
+functions:
+ app: 
+   handler: dist/main.handler
+   events:
+     - http:
+         method: get
+         path: /home
+
+provider: 
+    name: aws
+    runtime: nodejs18.x
+    apiGateway:
+      shouldStartNameWithService: true
+    region: ap-southeast-1
+
+    environment: 
+      AWS_NODEJS_CONNECTION_REUSE_ENABLED: 1
+      NODE_OPTIONS: --enable-source-maps --stack-trace-limit=1000
+    iam: 
+      role: 
+        statements: 
+            - Effect: 'Allow'
+              Action: 
+                - 'dynamodb:DescribeTable'
+                - 'dynamodb:Query'
+                - 'dynamodb:Scan'
+                - 'dynamodb:GetItem'
+                - 'dynamodb:PutItem'
+                - 'dynamodb:UpdateItem'
+                - 'dynamodb:DeleteItem'
+
+              Resource: arn:aws:dynamodb:ap-southeast-1:*:table/quiz
+
+custom: 
+    esbuild: 
+      bundle: true
+      minify: false
+      sourcemap: true
+      exclude: aws-sdk
+      target: node18
+      define: 'require.resolve: undefined'
+      platform: node
+      concurrency: 10
+
+    dynamodb: 
+      start: 
+        port: 5000
+        inMemory: true
+        migrate: true
+
+      stages: dev
+
